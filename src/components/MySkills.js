@@ -11,12 +11,13 @@ const MySkills = () => {
         id="Skills"
         top="10%"
         bottom="10%"
+        responsiveLeft="1rem" responsiveRight="1rem"
     >
-        <FlexContainer fullWidthChild>
+        <FlexContainer fullWidthChild responsiveFlex responsiveDirection="column-reverse">
             {/* left-section */}
             <SkillsCardContainer>
                 {skills.map((skill)=>(
-                    <SkillsCard>
+                    <SkillsCard key={skill.id}>
                         <IconContainer size="5rem" color="blue">
                             {skill.icon}
                         </IconContainer>

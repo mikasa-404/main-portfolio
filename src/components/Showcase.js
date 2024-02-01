@@ -15,15 +15,17 @@ import {
   Image,
   Particle,
 } from "../styles/Showcase.styles";
-import showcaseImage from "../assets/1000089190-01-removebg-preview (4).png";
+import showcaseImage from "../assets/profile.png";
 import BackgroundImage from "../assets/particle.png";
 
 const Showcase = () => {
   return (
-    <PaddingContainer id="Home" left="3%" right="10%" top="15%" bottom="10%">
-      <FlexContainer align="left" fullWidthChild>
+    <PaddingContainer id="Home" left="3%" right="10%" top="15%" bottom="10%"
+      responsiveTop="8rem" responsiveLeft="1rem" responsiveRight="1rem"
+    >
+      <FlexContainer align="center" fullWidthChild >
         {/*left content */}
-        <div>
+        <FlexContainer direction="column" justify="space-between" align="left">
           <Heading as="h4" size="h4">
             Hello!
           </Heading>
@@ -42,7 +44,7 @@ const Showcase = () => {
           </ParaText>
 
           {/* social icons */}
-          <FlexContainer gap="20px">
+          <FlexContainer gap="20px" responsiveFlex>
             <IconContainer color="white" size="1.5rem">
               <BsLinkedin />
             </IconContainer>
@@ -53,33 +55,33 @@ const Showcase = () => {
               <SiLeetcode />
             </IconContainer>
           </FlexContainer>
-        </div>
+        </FlexContainer>
 
         {/* right content */}
-        <FlexContainer justify="flex-end">
+        <FlexContainer justify="flex-end" align="center">
           <ShowcaseParticleContainer>
             <ShowcaseImageCard>
-              <img src={showcaseImage} alt="profile" />
+              <Image src={showcaseImage} alt="profile" />
             </ShowcaseImageCard>
             <Particle
               src={BackgroundImage}
               alt="particle"
-              top="-80px"
+              top="-120px"
               left="30px"
-              rotate="60deg"
+              rotate="40deg"
             />
             <Particle
               src={BackgroundImage}
               alt="particle"
-              top="50px"
-              right="-70px"
-              rotate="0deg"
+              top="100px"
+              right="-100px"
+              rotate="10deg"
             />
             <Particle
               src={BackgroundImage}
               alt="particle"
               bottom="10px"
-              left="-70px"
+              left="-120px"
               rotate="50deg"
             />
           </ShowcaseParticleContainer>
