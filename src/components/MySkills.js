@@ -4,6 +4,8 @@ import {
 } from "../styles/Global.styled"
 import {skills} from "../utils/Data"
 import { SkillsCard, SkillsCardContainer } from '../styles/MySkills.styled'
+import {motion} from "framer-motion"
+import { fadeInLeftVariant, fadeInRightVariant } from '../utils/Variants'
 
 const MySkills = () => {
   return (
@@ -15,7 +17,12 @@ const MySkills = () => {
     >
         <FlexContainer fullWidthChild responsiveFlex responsiveDirection="column-reverse">
             {/* left-section */}
-            <SkillsCardContainer>
+            <SkillsCardContainer 
+                as={motion.div}
+                variants={fadeInLeftVariant}
+                initial="hidden"
+                whileInView="visible"
+            >
                 {skills.map((skill)=>(
                     <SkillsCard key={skill.id}>
                         <IconContainer size="5rem" color="blue">
@@ -26,7 +33,11 @@ const MySkills = () => {
                 ))}
             </SkillsCardContainer>
             {/* right section */}
-            <div>
+            <motion.div
+                variants={fadeInRightVariant}
+                initial="hidden"
+                whileInView="visible"
+            >
                     <Heading as="h4" size="h4">MY SKILLS</Heading>
                     <Heading as="h2" size="h2" top="0.5rem">What <BlueText>I can do</BlueText></Heading>
                     <ParaText top="2rem" bottom="1.5rem">
@@ -41,7 +52,7 @@ const MySkills = () => {
                         This has allowed me to create efficient and sustainable code that can adept to the 
                         changing needs of a business
                     </ParaText>
-            </div>
+            </motion.div>
 
         </FlexContainer>
     </PaddingContainer>

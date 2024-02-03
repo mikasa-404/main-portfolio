@@ -20,9 +20,20 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow: hidden;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+::-webkit-scrollbar{
+  width:10px;
+  background-color: #000111;
+}
+
+::-webkit-scrollbar-thumb{
+  background-image: linear-gradient(#88AB8E,#000111);
+  border-radius: 10px;
 }

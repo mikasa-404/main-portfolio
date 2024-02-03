@@ -2,11 +2,21 @@ import React from 'react'
 import {PaddingContainer,Heading, FlexContainer, ParaText, IconContainer,Button} from "../styles/Global.styled"
 import { FaGithub } from 'react-icons/fa'
 import {ProjectImage, ProjectImageContainer, TechStackCard, GithubButton} from "../styles/MyProjects.styled"
+import {motion} from "framer-motion"
+import { fadeInLeftVariant,fadeInRightVariant } from '../utils/Variants'
+
 const Project = ({data}) => {
   return (
-    <FlexContainer fullWidthChild>
+    <FlexContainer 
+        fullWidthChild
+        direction={data.reverse ? 'row-reverse': false}
+    >
         {/* left-section */}
-        <div>
+        <motion.div
+            variants={data.reverse? fadeInRightVariant: fadeInLeftVariant}
+            initial="hidden"
+            whileInView="visible"
+        >
             <FlexContainer gap="1rem">
                 <Heading as="h3" size="h3" bottom="1rem">
                     {data.project_name}
@@ -30,8 +40,13 @@ const Project = ({data}) => {
             <Button href={data.project_url} target="blank">
                 Visit website   
             </Button>
-        </div>
-        <ProjectImageContainer justify="flex-end">
+        </motion.div>
+        <ProjectImageContainer
+            as={motion.div}
+            variants={data.reverse? fadeInLeftVariant: fadeInRightVariant}
+            initial="hidden"
+            whileInView="visible"   
+            justify={data.reverse ? 'flex-start': 'flex-end'}>
             <ProjectImage src={data.project_img}></ProjectImage>
         </ProjectImageContainer>
     </FlexContainer>
