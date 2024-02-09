@@ -15,13 +15,15 @@ import {
   ShowcaseImageCard,
   Image,
   Particle,
-} from "../styles/Showcase.styles";
+  Link,
+} from "../styles/Showcase.styled";
 import showcaseImage from "../assets/profile.png";
 import BackgroundImage from "../assets/particle.png";
 import { fadeInLeftVariant, fadeInRightVariant } from "../utils/Variants";
 
 const Showcase = () => {
   return (
+   
     <PaddingContainer id="Home" left="3%" right="10%" top="18%" bottom="10%"
       responsiveTop="8rem" responsiveLeft="1rem" responsiveRight="1rem"
     >
@@ -30,7 +32,6 @@ const Showcase = () => {
         <motion.div style={{textAlign:"left"}}
           variants={fadeInLeftVariant}
           initial="hidden"
-          
           whileInView="visible"
         >
           <Heading as="h4" size="h4">
@@ -49,17 +50,16 @@ const Showcase = () => {
             specialize in both frontend and backend development, focusing on
             crafting effective and elegant solutions.
           </ParaText>
-
           {/* social icons */}
           <FlexContainer gap="20px" responsiveFlex>
             <IconContainer color="white" size="1.5rem">
-              <BsLinkedin />
+            <Link target="blank" href="https://www.linkedin.com/in/priyajha414"><BsLinkedin /></Link>
             </IconContainer>
             <IconContainer color="white" size="1.5rem">
-              <BsGithub />
+            <Link target="blank" href="https://github.com/mikasa-404"><BsGithub /></Link>
             </IconContainer>
             <IconContainer color="white" size="1.5rem">
-              <SiLeetcode />
+            <Link target="blank" href="https://leetcode.com/mikasa404/"><SiLeetcode /></Link>
             </IconContainer>
           </FlexContainer>
         </motion.div>

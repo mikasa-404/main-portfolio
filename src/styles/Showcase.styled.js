@@ -28,3 +28,10 @@ export const Particle=styled.img`
     right: ${({ right }) => right};
     transform: rotate(${({rotate})=>rotate});
 `
+export const Link=styled.a`
+    display: inline-block;
+
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+`
