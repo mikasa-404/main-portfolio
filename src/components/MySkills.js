@@ -48,9 +48,7 @@ const MySkills = () => {
                         web applications.
                     </ParaText>
                     <ParaText>
-                        I have experience in using React and building scalable and maintainable applications.
-                        This has allowed me to create efficient and sustainable code that can adept to the 
-                        changing needs of a business
+                    Beyond web development, I am deeply adept in problem-solving. My proficiency in data structures and algorithms, coupled with a strong command of the C++ language, equips me to tackle complex challenges with precision and efficiency. 
                     </ParaText>
             </motion.div>
 

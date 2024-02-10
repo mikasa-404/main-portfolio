@@ -7,10 +7,8 @@ import MySkills from "./components/MySkills";
 import MyProjects from "./components/MyProjects";
 import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
-
 import TopFadeImage from "../src/assets/top.png"
-import LeftFadeImage from "../src/assets/left.png"
-
+import AnimatedCursor from "react-animated-cursor"
 
 
 function App() {
@@ -26,8 +24,15 @@ function App() {
         <Footer/>
         </Container>
         <FadeImage src={TopFadeImage} top="0"/>
-        <FadeImage src={LeftFadeImage} top="30vh"/>
       </MainBody>
+      <AnimatedCursor 
+         innerSize={16}
+         outerSize={28}
+         color='136, 171, 142'
+         outerAlpha={0.2}
+         innerScale={0.7}
+         outerScale={5}
+      />
     </ThemeProvider>
   );
 }
