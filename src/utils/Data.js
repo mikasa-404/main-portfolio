@@ -73,12 +73,17 @@ export const navLinks = [
     href: "Skills",
   },
   {
-    id: 0,
+    id: 2,
+    name: "My Experience ",
+    href: "Experience",
+  },
+  {
+    id: 3,
     name: "My Projects ",
     href: "Projects",
   },
   {
-    id: 0,
+    id: 4,
     name: "Contact",
     href: "Contact",
   },
