@@ -8,7 +8,7 @@ const Footer = () => {
   return (
     <PaddingContainer
         id="Contact"
-        top="5%"
+        top="10%"
         bottom="10%"
         responsiveRight="1rem" responsiveLeft="1rem"
     >

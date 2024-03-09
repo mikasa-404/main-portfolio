@@ -26,7 +26,7 @@ function App() {
 
           <Footer />
         </Container>
-        <FadeImage src={TopFadeImage} top="0" />
+        {/* <FadeImage src={TopFadeImage} top="0" width="inherit"/> */}
       </MainBody>
       <AnimatedCursor
         innerSize={16}

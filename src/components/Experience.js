@@ -42,7 +42,7 @@ const Experience = () => {
       >
         Where <BlueText>I have worked</BlueText>
       </Heading>
-        <PaddingContainer top="2%">
+        <PaddingContainer top="5%">
         <VerticalTimeline>
         <VerticalTimelineElement
           contentStyle={{ background: "#191919", color: "#fff" }}

@@ -69,15 +69,18 @@ const Showcase = () => {
             </BlueText>
           </Heading>
           <ParaText as="p" top="2rem" bottom="1rem">
-            Hello, I'm Priya, a seasoned web developer with a passion for
-            problem-solving. Currently pursuing my Masters in Mathematics and
-            Computing at IIT(ISM) Dhanbad, with an expected graduation in 2024.
+            I'm a passionate web developer currently pursuing my Master's in
+            Mathematics and Computing at IIT(ISM) Dhanbad (expected graduation
+            2024). While honing my theoretical knowledge, I'm also gaining
+            practical experience as a Software Development Engineer Intern at
+            The Internet Folks.<br/>
+            Problem-solving is at the core of my approach to web development. I
+            thrive on the challenge of translating complex ideas into
+            user-friendly and impactful web applications.<br/>
+            Let's connect and turn your ideas into reality!
           </ParaText>
-          <ParaText as="p" bottom="2rem">
-            I'm excited to continue pushing the boundaries of web development
-            and contributing to innovative projects that make a meaningful
-            impact. Let's collaborate and turn ideas into reality!
-          </ParaText>
+         
+
           {/* social icons */}
           <FlexContainer gap="20px" responsiveFlex>
             <IconContainer color="white" size="1.5rem">
@@ -98,14 +101,13 @@ const Showcase = () => {
                 <SiLeetcode />
               </StyledLink>
             </IconContainer>
-            
-            
           </FlexContainer>
-          <ResumeButoon 
-            href="https://drive.google.com/file/d/1eEjDnKuC8x9dfDpBPdYppoiPS3U1W5ZI/view?usp=sharing"
-            target="blank">
-              Resume
-            </ResumeButoon>
+          <ResumeButoon
+            href="https://drive.google.com/file/d/1Q60MkMn7PLXI7pd9ny0EOxLcM8bkMz6V/view?usp=sharing"
+            target="blank"
+          >
+            Resume
+          </ResumeButoon>
         </motion.div>
 
         {/* right content */}

@@ -9,7 +9,7 @@ const MyProjects = () => {
   return (
     <PaddingContainer
       id="Projects"
-      top="5%"
+      top="10%"
       bottom="5%"
       responsiveTop="20%"
       responsiveLeft="1rem"
