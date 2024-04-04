@@ -71,7 +71,7 @@ const Showcase = () => {
           <ParaText as="p" top="2rem" bottom="1rem">
             I'm a passionate web developer currently pursuing my Master's in
             Mathematics and Computing at IIT(ISM) Dhanbad (expected graduation
-            2024). While honing my theoretical knowledge, I'm also gaining
+            May 2024). While honing my theoretical knowledge, I'm also gaining
             practical experience as a Software Development Engineer Intern at
             The Internet Folks.<br/>
             Problem-solving is at the core of my approach to web development. I
@@ -103,7 +103,7 @@ const Showcase = () => {
             </IconContainer>
           </FlexContainer>
           <ResumeButoon
-            href="https://drive.google.com/file/d/1Q60MkMn7PLXI7pd9ny0EOxLcM8bkMz6V/view?usp=sharing"
+            href="https://drive.google.com/file/d/134_0mUwO9ciZFaqwNlzPRez1wy5vz4iH/view?usp=sharing"
             target="blank"
           >
             Resume
