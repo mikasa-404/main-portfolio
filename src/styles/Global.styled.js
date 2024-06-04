@@ -30,6 +30,7 @@ export const FlexContainer = styled.div`
   align-items: ${({ align }) => align};
   gap: ${({ gap }) => gap};
   flex-direction: ${({ direction }) => direction};
+  text-align: ${({ textAlign }) => textAlign};
 
   & > div {
     flex: ${({ fullWidthChild }) => fullWidthChild && 1};

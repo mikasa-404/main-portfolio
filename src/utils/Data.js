@@ -2,8 +2,8 @@ import { FaReact, FaHtml5, FaCss3, FaNode } from "react-icons/fa";
 import { SiJavascript, SiTypescript } from "react-icons/si";
 import Project1 from "../assets/Screenshot from 2024-01-31 12-25-34.png";
 import Project2 from "../assets/Screenshot from 2024-01-31 12-25-05.png";
-import Project3 from "../assets/Screenshot from 2024-04-04 09-50-06.png"
-
+import Project3 from "../assets/ss1.png";
+export const resumeLink = "https://drive.google.com/file/d/1XbjXR7CyeIv7aJRIWxpxjKxsMAkwYcd8/view?usp=sharing"
 export const skills = [
   {
     id: 0,
@@ -40,36 +40,37 @@ export const skills = [
 export const projects = [
   {
     id: 0,
-    project_name: "SocioHub: Social Media Application",
-    project_desc:
-      "Developed a social media application with secured authentication/authorization.You can register/login, create posts, like posts, add and remove friends as well as view user profiles and friend lists. Responsive web application with support for light/dark modes.",
+    project_name: "SehShiksha: Student Community Platform",
+    project_desc: "A full-stack community portal for college students.",
+    features:
+      "JWT authentication/authorization, allows CRUD operations on posts, upload and preview pdf materials, community forum for discussions, file upload functionality using multer, light/dark mode options.",
     tech_stack: ["React JS", "Node.js", "Express.js", "MongoDB", "Material UI"],
     project_img: Project3,
-    project_url: "https://sociohub.vercel.app",
-    github_link:"https://github.com/mikasa-404/social-media-fullstack",
+    project_url: "https://seh-shiksha.vercel.app",
+    github_link: "https://github.com/mikasa-404/sehShiksha",
     reverse: false,
   },
- 
+
   {
     id: 1,
     project_name: "YouTube Clone Plus",
-    project_desc:
-      "Developed a high-quality video streaming platform that utilizes the YouTube API, incorporating features such as a slide sidebar, infinite scroll, and a well-optimized search employing live API, debouncing, and caching for swift, real-time results. Implemented a robust Node.js and Express.js server to overcome CORS challenges. Additional features include N-level nested comment sections and a live chat display",
+    project_desc:"A video streaming platform which utilizes YouTube API",
+    features:"Infinite scroll, well-optimized search with debouncing, caching, and API integration, N-level nested comment section and live chat display",
     tech_stack: ["React JS", "Redux Toolkit", "Tailwind", "Express.js"],
     project_img: Project2,
     project_url: "https://priya-youtube.netlify.app/",
-    github_link:"https://github.com/mikasa-404/yt-clone",
+    github_link: "https://github.com/mikasa-404/yt-clone",
     reverse: true,
   },
   {
     id: 2,
     project_name: "FoodyVille: Food Ordering Application",
-    project_desc:
-      "Food ordering project that finds nearby restaurants, offers search functionality, efficient cart management using Redux toolkit along with features like custom shimmer UI and dynamic routing. Plus, custom hooks and lazy loading making it super efficient!",
+    project_desc:"Developed a food ordering application using React",
+    features:"Redux for efficient cart management, developed a middleware to automatically persist cart state to localStorage, search for restaurants, lazy loading on components with custom shimmerUI",
     tech_stack: ["React JS", "Redux Toolkit", "Tailwind"],
     project_img: Project1,
     project_url: "https://foodyville.netlify.app",
-    github_link:"https://github.com/mikasa-404/food-ordering-app",
+    github_link: "https://github.com/mikasa-404/food-ordering-app",
     reverse: false,
   },
 ];

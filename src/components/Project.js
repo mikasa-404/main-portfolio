@@ -1,5 +1,5 @@
 import React from 'react'
-import {PaddingContainer,Heading, FlexContainer, ParaText, IconContainer,Button} from "../styles/Global.styled"
+import {PaddingContainer,Heading, FlexContainer, ParaText, IconContainer,Button, BlueText} from "../styles/Global.styled"
 import { FaGithub } from 'react-icons/fa'
 import {ProjectImage, ProjectImageContainer, TechStackCard, GithubButton} from "../styles/MyProjects.styled"
 import {motion} from "framer-motion"
@@ -17,7 +17,7 @@ const Project = ({data}) => {
             initial="hidden"
             whileInView="visible"
         >
-            <FlexContainer gap="1rem">
+            <FlexContainer gap="1rem" align="center" justify="flex-start" textAlign="left">
                 <Heading as="h3" size="h3" bottom="1rem">
                     {data.project_name}
                 </Heading>
@@ -36,7 +36,11 @@ const Project = ({data}) => {
                 </FlexContainer>
             </PaddingContainer> 
 
-            <ParaText top="1.5rem" bottom="2rem">{data.project_desc}</ParaText>
+            <ParaText top="1.5rem" >{data.project_desc}</ParaText>
+            <ParaText top="0.5rem" bottom="2rem">
+                <BlueText> <span style={{fontWeight:'bold', fontSize:"1rem"}}>Features: </span></BlueText>
+               
+                {data.features}</ParaText>
             <Button href={data.project_url} target="blank">
                 Visit website   
             </Button>

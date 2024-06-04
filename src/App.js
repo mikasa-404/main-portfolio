@@ -16,17 +16,14 @@ function App() {
     <ThemeProvider theme={theme}>
       <MainBody>
         <Navbar />
-
         <Container>
           <Showcase />
           <MySkills />
-
           <Experience />
           <MyProjects />
-
           <Footer />
         </Container>
-        {/* <FadeImage src={TopFadeImage} top="0" width="inherit"/> */}
+        <FadeImage src={TopFadeImage} top="0" width="inherit" />
       </MainBody>
       <AnimatedCursor
         innerSize={16}

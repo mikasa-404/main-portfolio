@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-
+import {resumeLink} from "../utils/Data"
 import {
   PaddingContainer,
   Heading,
@@ -103,7 +103,7 @@ const Showcase = () => {
             </IconContainer>
           </FlexContainer>
           <ResumeButoon
-            href="https://drive.google.com/file/d/134_0mUwO9ciZFaqwNlzPRez1wy5vz4iH/view?usp=sharing"
+            href={resumeLink}
             target="blank"
           >
             Resume

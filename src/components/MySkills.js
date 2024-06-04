@@ -6,11 +6,13 @@ import {
   IconContainer,
   ParaText,
   BlueText,
+  FadeImage,
 } from "../styles/Global.styled";
 import { skills } from "../utils/Data";
 import { SkillsCard, SkillsCardContainer } from "../styles/MySkills.styled";
 import { motion } from "framer-motion";
 import { fadeInLeftVariant, fadeInRightVariant } from "../utils/Variants";
+import fadeimage from "../assets/right.png"
 
 const MySkills = () => {
   return (
@@ -21,6 +23,7 @@ const MySkills = () => {
       responsiveLeft="1rem"
       responsiveRight="1rem"
     >
+      <FadeImage src={fadeimage} right="0" width="inherit" />
       <FlexContainer
         fullWidthChild
         responsiveFlex

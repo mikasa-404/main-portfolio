@@ -42,7 +42,7 @@ const Experience = () => {
           <VerticalTimelineElement
             contentStyle={{ background: "#191919", color: "#fff" }}
             contentArrowStyle={{ borderRight: "7px solid  #191919" }}
-            date="Jan 2024- present"
+            date="Feb 2024- present"
             iconStyle={{ background: "#88AB8E", color: "#fff" }}
           >
             <h3 className="vertical-timeline-element-title">
