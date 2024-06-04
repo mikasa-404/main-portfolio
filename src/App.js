@@ -10,10 +10,13 @@ import Navbar from "./components/Navbar";
 import TopFadeImage from "../src/assets/top.png";
 import AnimatedCursor from "react-animated-cursor";
 import Experience from "./components/Experience";
-
+import { Toaster } from "react-hot-toast";
 function App() {
   return (
     <ThemeProvider theme={theme}>
+      <div>
+        <Toaster />
+      </div>
       <MainBody>
         <Navbar />
         <Container>

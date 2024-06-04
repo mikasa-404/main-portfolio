@@ -1,67 +1,127 @@
-import React from 'react'
-import {PaddingContainer,Heading,BlueText,FlexContainer,Button} from "../styles/Global.styled"
-import {ContactForm, FormInput, FormLabel} from "../styles/Footer.styled"
-import {motion} from "framer-motion"
-import { fadeInBottomVariant } from '../utils/Variants'
-
+import React, { useState } from "react";
+import {
+  PaddingContainer,
+  Heading,
+  BlueText,
+  FlexContainer,
+  Button,
+} from "../styles/Global.styled";
+import { ContactForm, FormInput, FormLabel } from "../styles/Footer.styled";
+import { motion } from "framer-motion";
+import { fadeInBottomVariant } from "../utils/Variants";
+import emailjs from "@emailjs/browser";
+import toast from "react-hot-toast";
 const Footer = () => {
+  // const form = useRef();
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log("called");
+    const service_id = "service_v7jnuuu";
+    const template_id = "template_y32cui8";
+    const public_key = "o76N55bSnpRGOs1LK";
+    const template_params = {
+      from_name: name,
+      from_email: email,
+      to_name: "Priya",
+      message: message,
+    };
+    emailjs
+      .send(service_id, template_id, template_params, public_key)
+      .then((res) => {
+        toast.success("Email sent successfully");
+        setName("");
+        setEmail("");
+        setMessage("");
+      })
+      .catch((err) => {
+        toast.error("Error sending email");
+      });
+  };
+
   return (
     <PaddingContainer
-        id="Contact"
-        top="10%"
-        bottom="10%"
-        responsiveRight="1rem" responsiveLeft="1rem"
+      id="Contact"
+      top="10%"
+      bottom="10%"
+      responsiveRight="1rem"
+      responsiveLeft="1rem"
+      style={{
+        overflow: "hidden",
+      }}
     >
-        <Heading
-            as={motion.h4}
-            variants={fadeInBottomVariant}
-            initial="hidden"
-            whileInView="visible"
-             size="h4" align="center">MY CONTACT</Heading>
-        <Heading 
+      <Heading
+        as={motion.h4}
+        variants={fadeInBottomVariant}
+        initial="hidden"
+        whileInView="visible"
+        size="h4"
+        align="center"
+      >
+        MY CONTACT
+      </Heading>
+      <Heading
         as={motion.h2}
         variants={fadeInBottomVariant}
         initial="hidden"
         whileInView="visible"
-         size="h2" align="center" top="0.5rem">
-            Contact <BlueText>Me Here</BlueText>
-        </Heading>
+        size="h2"
+        align="center"
+        top="0.5rem"
+      >
+        Contact <BlueText>Me Here</BlueText>
+      </Heading>
 
-        <PaddingContainer top="3rem">
-            <FlexContainer justify="center">
+      <PaddingContainer top="3rem">
+        <FlexContainer justify="center">
+          <ContactForm
+            as={motion.form}
+            variants={fadeInBottomVariant}
+            initial="hidden"
+            whileInView="visible"
+            onSubmit={handleSubmit}
+          >
+            <PaddingContainer bottom="2rem">
+              <FormLabel>Name:</FormLabel>
+              <FormInput
+                type="text"
+                placeholder="Enter your name"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+              ></FormInput>
+            </PaddingContainer>
+            <PaddingContainer bottom="2rem">
+              <FormLabel>Email:</FormLabel>
+              <FormInput
+                type="email"
+                placeholder="Enter your email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+              ></FormInput>
+            </PaddingContainer>
+            <PaddingContainer bottom="2rem">
+              <FormLabel>Message:</FormLabel>
+              <FormInput
+                as="textarea"
+                placeholder="Enter your message"
+                value={message}
+                onChange={(e) => setMessage(e.target.value)}
+              ></FormInput>
+            </PaddingContainer>
 
-                <ContactForm
-                    as={motion.form}
-                    variants={fadeInBottomVariant}
-                    initial="hidden"
-                    whileInView="visible"
-                >
-
-                    <PaddingContainer bottom="2rem">
-                        <FormLabel>Name:</FormLabel>
-                        <FormInput type='text' placeholder='Enter your name'></FormInput>
-                    </PaddingContainer>
-                    <PaddingContainer bottom="2rem">
-                        <FormLabel>Email:</FormLabel>
-                        <FormInput type='email' placeholder='Enter your email'></FormInput>
-                    </PaddingContainer>
-                    <PaddingContainer bottom="2rem">
-                        <FormLabel>Message:</FormLabel>
-                        <FormInput as='textarea' placeholder='Enter your message'></FormInput>
-                    </PaddingContainer>
-
-                    <FlexContainer justify="center" responsiveFlex>
-                        <Button>Send Message</Button>
-                    </FlexContainer>
-
-                </ContactForm>
-
+            <FlexContainer justify="center" responsiveFlex>
+              <button type="submit">
+                <Button>Send Message</Button>
+              </button>
             </FlexContainer>
-
-        </PaddingContainer>
-
+          </ContactForm>
+        </FlexContainer>
+      </PaddingContainer>
     </PaddingContainer>
-  )
-}
+  );
+};
 
-export default Footer
+export default Footer;

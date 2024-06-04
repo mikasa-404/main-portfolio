@@ -1,5 +1,10 @@
 import React from "react";
-import { PaddingContainer, Heading, BlueText } from "../styles/Global.styled";
+import {
+  PaddingContainer,
+  Heading,
+  BlueText,
+  FadeImage,
+} from "../styles/Global.styled";
 import { motion } from "framer-motion";
 import { fadeInTopVariant } from "../utils/Variants";
 import {
@@ -7,6 +12,7 @@ import {
   VerticalTimelineElement,
 } from "react-vertical-timeline-component";
 import "react-vertical-timeline-component/style.min.css";
+import left from "../assets/left.png";
 
 const Experience = () => {
   return (
@@ -17,6 +23,8 @@ const Experience = () => {
       responsiveRight="1rem"
       responsiveLeft="1rem"
     >
+      <FadeImage src={left} left="0" width="inherit" />
+
       <Heading
         as={motion.h4}
         variants={fadeInTopVariant}
