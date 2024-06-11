@@ -15,8 +15,9 @@ export const ShowcaseParticleContainer = styled.div`
 export const ShowcaseImageCard = styled.div`
   position: relative;
   overflow: hidden;
-  height: 100%;
+  height: 400px;
   width: max-content;
+  object-fit: cover;
 `;
 export const Image = styled.img`
   border-radius: 5%;

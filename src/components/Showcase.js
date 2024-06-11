@@ -20,7 +20,7 @@ import {
   StyledLink,
   ResumeButoon,
 } from "../styles/Showcase.styled";
-import showcaseImage from "../assets/profile.png";
+import showcaseImage from "../assets/profile2.jpeg"
 import BackgroundImage from "../assets/particle.png";
 import { fadeInLeftVariant, fadeInRightVariant } from "../utils/Variants";
 import { TypeAnimation } from "react-type-animation";
