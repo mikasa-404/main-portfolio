@@ -3,7 +3,7 @@ import { SiJavascript, SiTypescript } from "react-icons/si";
 import Project1 from "../assets/Screenshot from 2024-01-31 12-25-34.png";
 import Project2 from "../assets/Screenshot from 2024-01-31 12-25-05.png";
 import Project3 from "../assets/ss1.png";
-export const resumeLink = "https://drive.google.com/file/d/1XbjXR7CyeIv7aJRIWxpxjKxsMAkwYcd8/view?usp=sharing"
+export const resumeLink = "https://drive.google.com/file/d/1LJalfYgeTarU5eRkI0oND8zJ32fUT2Gn/view"
 export const skills = [
   {
     id: 0,
