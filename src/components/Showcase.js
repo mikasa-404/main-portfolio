@@ -8,7 +8,6 @@ import {
   FlexContainer,
   BlueText,
   IconContainer,
-  Button,
 } from "../styles/Global.styled";
 import { BsLinkedin, BsGithub } from "react-icons/bs";
 import { SiLeetcode } from "react-icons/si";
@@ -20,7 +19,7 @@ import {
   StyledLink,
   ResumeButoon,
 } from "../styles/Showcase.styled";
-import showcaseImage from "../assets/profile2.jpeg"
+import showcaseImage from "../assets/profile3.png"
 import BackgroundImage from "../assets/particle.png";
 import { fadeInLeftVariant, fadeInRightVariant } from "../utils/Variants";
 import { TypeAnimation } from "react-type-animation";

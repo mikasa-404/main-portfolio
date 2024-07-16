@@ -15,9 +15,10 @@ export const ShowcaseParticleContainer = styled.div`
 export const ShowcaseImageCard = styled.div`
   position: relative;
   overflow: hidden;
-  height: 400px;
+  height: 450px;
   width: max-content;
   object-fit: cover;
+  object-position: center;
 `;
 export const Image = styled.img`
   border-radius: 5%;
@@ -36,7 +37,7 @@ export const Particle = styled.img`
 export const ResumeButoon = styled.a`
   display: block;
   width: max-content;
-  border: 1px solid ;
+  border: 1px solid;
   border-radius: 8px;
   cursor: pointer;
   transition: all 0.3s ease;
@@ -45,7 +46,7 @@ export const ResumeButoon = styled.a`
   background-color: ${({ theme }) => theme.colors.white};
   padding: 0.5rem 1rem;
   margin-top: 1rem;
-  font-weight:  ${({ theme }) => theme.fonts.weight.medium};
+  font-weight: ${({ theme }) => theme.fonts.weight.medium};
   &:hover {
     color: ${({ theme }) => theme.colors.white};
     background-color: ${({ theme }) => theme.colors.primary_light};

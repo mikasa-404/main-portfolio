@@ -31,7 +31,7 @@ export const FlexContainer = styled.div`
   gap: ${({ gap }) => gap};
   flex-direction: ${({ direction }) => direction};
   text-align: ${({ textAlign }) => textAlign};
-
+  flex-wrap: ${({ wrap }) => wrap};
   & > div {
     flex: ${({ fullWidthChild }) => fullWidthChild && 1};
   }
