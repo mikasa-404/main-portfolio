@@ -6,10 +6,13 @@ import {
   BlueText,
 } from "../styles/Global.styled";
 import { GiHamburgerMenu } from "react-icons/gi";
-import { NavbarContainer, Logo, MenuIcon } from "../styles/Navbar.styled";
+import { NavbarContainer, Logo, MenuIcon, NavMenuButton } from "../styles/Navbar.styled";
 import { theme } from "../utils/Theme";
 import NavMenu from "./NavMenu";
 import { AnimatePresence, motion } from "framer-motion";
+import { ResumeButoon } from "../styles/Showcase.styled";
+import { navLinks, resumeLink } from "../utils/Data";
+import { FaDownload } from "react-icons/fa6";
 
 const Navbar = () => {
   const [openMenu, setOpenMenu] = useState(false);
@@ -33,8 +36,8 @@ const Navbar = () => {
   return (
     <NavbarContainer bgColor={sticky ? theme.colors.primary : "transparent"}>
       <PaddingContainer
-        top="1.2rem"
-        bottom="1.2rem"
+        top="2rem"
+        bottom="2rem"
         responsiveLeft="1rem"
         responsiveRight="1rem"
         responsiveTop="1rem"
@@ -48,8 +51,32 @@ const Navbar = () => {
                 PriyaJha<BlueText>.dev</BlueText>
               </Logo>
             </div>
-
+            {/* middle-content */}
+            <FlexContainer align="center" justify="center" gap="12px" responsiveFlex>
+              {
+                navLinks.map((link, index) => {
+                  return (
+                    <NavMenuButton key={index}
+                        whileHover={{scale: 1.2}}
+                        href={`#${link.href}`}  onClick={()=>setOpenMenu(false)}>{link.name}</NavMenuButton>
+                  );
+                })
+              }
+               
+            </FlexContainer>
             {/* right-icon */}
+
+            <ResumeButoon href={resumeLink} target="blank">
+              Resume
+              <span
+                style={{
+                  paddingTop: "3px",
+                }}
+              >
+                <FaDownload size={16} />
+              </span>
+            </ResumeButoon>
+
             <MenuIcon
               as={motion.a}
               whileHover={{ scale: 1.2 }}

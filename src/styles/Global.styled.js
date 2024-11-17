@@ -6,7 +6,6 @@ export const MainBody = styled.div`
 
 export const Container = styled.div`
   width: 90%;
-  max-width: 1280px;
   margin: auto;
 `;
 
@@ -47,13 +46,13 @@ export const Heading = styled(PaddingContainer)`
   font-size: ${({ size }) => {
     switch (size) {
       case "h1":
-        return "4.5rem";
+        return "5rem";
       case "h2":
-        return "3rem";
+        return "4rem";
       case "h3":
-        return "2rem";
+        return "2.5rem";
       case "h4":
-        return "1.2rem";
+        return "1.5rem";
       default:
         return;
     }
@@ -83,7 +82,8 @@ export const BlueText = styled.span`
 
 export const ParaText = styled(PaddingContainer)`
   color: ${({ theme }) => theme.colors.para_text_color};
-  line-height: 2rem;
+  line-height: 1.75drem;
+  font-size: 1.2rem;
 `;
 
 export const IconContainer = styled.div`

@@ -22,11 +22,36 @@ export const MenuIcon= styled.a`
     transition: all 0.3s ease;
     display: flex;
     align-items: center;
+    display: none;
 
-   
+    @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    display: block;
+    }
+
 
 `
-
+export const NavMenuButton = styled.a`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid;
+  border-radius: 20px;
+  transition: all 0.3s ease;
+  font-size: '1.25rem';
+  text-decoration: none;
+  color: ${({ theme }) => theme.colors.primary_light};
+  background-color: ${({ theme }) => theme.colors.white};
+  padding: 0.5rem 1rem;
+  font-weight: ${({ theme }) => theme.fonts.weight.medium};
+  &:hover {
+    color: ${({ theme }) => theme.colors.white};
+    background-color: ${({ theme }) => theme.colors.primary_light};
+  }
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    display: none;
+  }
+`;
 export const NavMenuContainer=styled.div`
     position: fixed;
     top:0;

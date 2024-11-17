@@ -23,20 +23,23 @@ import showcaseImage from "../assets/profile3.png"
 import BackgroundImage from "../assets/particle.png";
 import { fadeInLeftVariant, fadeInRightVariant } from "../utils/Variants";
 import { TypeAnimation } from "react-type-animation";
+import ScrollMouse from "./ScrollMouse";
 
 const Showcase = () => {
   return (
     <PaddingContainer
       id="Home"
       left="3%"
-      right="10%"
-      top="10%"
+      right="8%"
+      top="14%"
       bottom="10%"
       responsiveTop="8rem"
       responsiveLeft="1rem"
       responsiveRight="1rem"
+      style={{
+      }}
     >
-      <FlexContainer align="center" fullWidthChild>
+      <FlexContainer align="center" justify="space-between">
         {/*left content */}
         <motion.div
           style={{ textAlign: "left" }}
@@ -44,22 +47,21 @@ const Showcase = () => {
           initial="hidden"
           whileInView="visible"
         >
-          <Heading as="h4" size="h4">
-            Hello!
-          </Heading>
           <Heading as="h2" size="h2" top="0.5rem" bottom="1rem">
-            I'm <BlueText>Priya Jha</BlueText>
+            <span style={{
+              'font-size': '2rem',
+            }}>Hello, I'm </span><BlueText>Priya Jha!</BlueText>
           </Heading>
           <Heading as="h3" size="h3">
-            I'm a{" "}
+            A{" "}
             <BlueText>
               <TypeAnimation
                 sequence={[
-                  "web developer",
+                  "FullStack developer",
                   1000,
-                  "problem solver",
+                  "Problem solver",
                   1000,
-                  "tech enthusiast",
+                  "Tech enthusiast",
                   1000,
                 ]}
                 speed={50}
@@ -67,8 +69,11 @@ const Showcase = () => {
               />
             </BlueText>
           </Heading>
-          <ParaText as="p" top="2rem" bottom="1rem">
-            I'm a passionate web developer currently pursuing my Master's in
+          <Heading as="h3" size="h3" top="0.5rem" bottom="1rem">Based in India.</Heading>
+          <ParaText as="p" top="1rem" bottom="3rem" style={{
+            maxWidth: "80%",
+          }}>
+            {/* I'm a passionate web developer currently pursuing my Master's in
             Mathematics and Computing at IIT(ISM) Dhanbad (expected graduation
             May 2024). While honing my theoretical knowledge, I'm also gaining
             practical experience as a Software Development Engineer Intern at
@@ -76,13 +81,15 @@ const Showcase = () => {
             Problem-solving is at the core of my approach to web development. I
             thrive on the challenge of translating complex ideas into
             user-friendly and impactful web applications.<br/>
-            Let's connect and turn your ideas into reality!
+            Let's connect and turn your ideas into reality! */}
+            I'm a Software developer currently working at Spyne with a  Master's in Mathematics & Computing from IIT Dhanbad. 
+            Always curious to learn more when it comes to  new technologies and creative coding. 
           </ParaText>
          
 
           {/* social icons */}
           <FlexContainer gap="20px" responsiveFlex>
-            <IconContainer color="white" size="1.5rem">
+            <IconContainer color="white" size="2rem">
               <StyledLink
                 target="blank"
                 href="https://www.linkedin.com/in/priyajha414"
@@ -90,33 +97,28 @@ const Showcase = () => {
                 <BsLinkedin />
               </StyledLink>
             </IconContainer>
-            <IconContainer color="white" size="1.5rem">
+            <IconContainer color="white" size="2rem">
               <StyledLink target="blank" href="https://github.com/mikasa-404">
                 <BsGithub />
               </StyledLink>
             </IconContainer>
-            <IconContainer color="white" size="1.5rem">
+            <IconContainer color="white" size="2rem">
               <StyledLink target="blank" href="https://leetcode.com/mikasa404/">
                 <SiLeetcode />
               </StyledLink>
             </IconContainer>
           </FlexContainer>
-          <ResumeButoon
-            href={resumeLink}
-            target="blank"
-          >
-            Resume
-          </ResumeButoon>
+         
         </motion.div>
 
         {/* right content */}
         <FlexContainer
           as={motion.div}
-          justify="flex-end"
-          align="center"
+          align="flex-end"
           variants={fadeInRightVariant}
           initial="hidden"
           whileInView="visible"
+              
         >
           <ShowcaseParticleContainer>
             <ShowcaseImageCard>
@@ -176,6 +178,7 @@ const Showcase = () => {
           </ShowcaseParticleContainer>
         </FlexContainer>
       </FlexContainer>
+      <ScrollMouse/>
     </PaddingContainer>
   );
 };
