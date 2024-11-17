@@ -26,7 +26,8 @@ export const GithubButton=styled.a`
 export const ProjectImage= styled.img`
     border: 1px solid #fff;
     width: 80%;
-    height: 300px;
+    height: 360px;
+    aspect-ratio: 1.5;
     object-fit: cover;
     border-radius: 10px;
 

@@ -83,7 +83,7 @@ export const BlueText = styled.span`
 export const ParaText = styled(PaddingContainer)`
   color: ${({ theme }) => theme.colors.para_text_color};
   line-height: 1.75drem;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
 `;
 
 export const IconContainer = styled.div`

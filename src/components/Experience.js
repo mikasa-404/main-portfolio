@@ -50,35 +50,48 @@ const Experience = () => {
           <VerticalTimelineElement
             contentStyle={{ background: "#191919", color: "#fff" }}
             contentArrowStyle={{ borderRight: "7px solid  #191919" }}
-            date="Feb 2024- Present"
+            date="Aug 2024- Present"
             iconStyle={{ background: "#88AB8E", color: "#fff" }}
           >
             <h3 className="vertical-timeline-element-title">
-              Software Developer Intern
+              SDE Intern - FullStack
             </h3>
             <h4 className="vertical-timeline-element-subtitle">
-              The Internet Folks
+              Spyne 
             </h4>
             <p>
-              Working as a SDE intern at a growing startup. Responsibilities
-              involve developing responsive web applications and features for
-              different clients.
+            Working as a Full-stack developer in the 360 team, creating immersive 360-degree views of cars
             </p>
           </VerticalTimelineElement>
           <VerticalTimelineElement
             contentStyle={{ background: "#191919", color: "#88AB8E" }}
             contentArrowStyle={{ borderRight: "7px solid  #191919" }}
+            date="Feb 2024- July 2024"
+            iconStyle={{ background: "#88AB8E", color: "#fff" }}
+          >
+             <h3 className="vertical-timeline-element-title">
+              Frontend Developer Intern
+            </h3>
+            <h4 className="vertical-timeline-element-subtitle">
+              The Internet Folks
+            </h4>
+            <p>
+              Worked as a frontend intern, contributing to building scalable no-code solutions, developing user-friendly event registration flows, and enhancing client websites. </p>
+          </VerticalTimelineElement>
+          <VerticalTimelineElement
+            contentStyle={{ background: "#191919", color: "#fff" }}
+            contentArrowStyle={{ borderRight: "7px solid  #191919" }}
             date="June 2022- May 2024"
             iconStyle={{ background: "#88AB8E", color: "#fff" }}
           >
-            <h3 className="vertical-timeline-element-title">
+             <h3 className="vertical-timeline-element-title">
               M.S. Mathematics and Computing
             </h3>
             <h4 className="vertical-timeline-element-subtitle">
               Indian Institute of Technology(ISM) Dhanbad
             </h4>
             <p>
-              Pursuing a Master's in Mathematics and Computing providing me a
+              Pursued a Master's in Mathematics and Computing providing me a
               well-rounded skill set with strong foundation in computer science
               fundamentals, problem-solving, analytical thinking, and
               programming skills.

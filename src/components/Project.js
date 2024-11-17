@@ -23,6 +23,10 @@ const Project = ({ data }) => {
     <FlexContainer
       fullWidthChild
       direction={data.reverse ? "row-reverse" : false}
+      style={{
+        marginLeft: '2rem',
+        marginRight: '2rem',
+      }}
     >
       {/* left-section */}
       <motion.div

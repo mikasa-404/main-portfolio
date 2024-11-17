@@ -40,6 +40,19 @@ export const skills = [
 ];
 
 export const projects = [
+ 
+  {
+    id: 0,
+    project_name: "SehShiksha: Student Community Platform",
+    project_desc: "A full-stack community portal for college students.",
+    features:
+      "JWT authentication/authorization, allows CRUD operations on posts, Integrated AWS S3 for efficient file upload and preview pdf materials, community forum for discussions, file upload functionality using multer, light/dark mode options.",
+    tech_stack: ["React JS", "Node.js", "Express.js", "AWS S3","MongoDB", "Material UI"],
+    project_img: Project3,
+    project_url: "https://seh-shiksha.vercel.app",
+    github_link: "https://github.com/mikasa-404/sehShiksha",
+    reverse: false,
+  },
   {
     id: 4,
     project_name: "Podcraft AI: Podcasting Platform",
@@ -51,18 +64,6 @@ export const projects = [
     project_img: Project4,
     project_url: "https://ai-podcast-platform.vercel.app",
     github_link: "https://github.com/mikasa-404/ai-podcast-platform",
-    reverse: false,
-  },
-  {
-    id: 0,
-    project_name: "SehShiksha: Student Community Platform",
-    project_desc: "A full-stack community portal for college students.",
-    features:
-      "JWT authentication/authorization, allows CRUD operations on posts, Integrated AWS S3 for efficient file upload and preview pdf materials, community forum for discussions, file upload functionality using multer, light/dark mode options.",
-    tech_stack: ["React JS", "Node.js", "Express.js", "AWS S3","MongoDB", "Material UI"],
-    project_img: Project3,
-    project_url: "https://seh-shiksha.vercel.app",
-    github_link: "https://github.com/mikasa-404/sehShiksha",
     reverse: true,
   },
 
