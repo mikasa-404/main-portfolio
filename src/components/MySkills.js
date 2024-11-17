@@ -16,7 +16,7 @@ import {
   SkillSectionHeading,
 } from "../styles/MySkills.styled";
 import { motion } from "framer-motion";
-import { fadeInLeftVariant, fadeInRightVariant } from "../utils/Variants";
+import { fadeInLeftVariant, fadeInRightVariant, fadeInTopVariant } from "../utils/Variants";
 import fadeimage from "../assets/right.png";
 import {
   FaCss3,
@@ -121,16 +121,27 @@ const MySkills = () => {
   return (
     <PaddingContainer
       id="Skills"
-      top="6%"
+      top="10%"
       bottom="10%"
       responsiveLeft="1rem"
       responsiveRight="1rem"
     >
       <FadeImage src={fadeimage} right="0" width="inherit" />
-      <Heading as="h4" size="h4">
+      <Heading  size="h4"
+       as={motion.h4}
+       variants={fadeInTopVariant}
+       initial="hidden"
+       whileInView="visible"
+      >
         MY SKILLS
       </Heading>
-      <Heading as="h2" size="h2">
+      <Heading size="h2"
+       as={motion.h2}
+       variants={fadeInTopVariant}
+       initial="hidden"
+       whileInView="visible"
+      >
+
         What <BlueText>I can do</BlueText>
       </Heading>
       {/* <ParaText style={{ marginTop: "4rem" }}>
@@ -139,10 +150,14 @@ const MySkills = () => {
       </ParaText> */}
     
       <FlexContainer
-        gap="20px"
+        gap="30px"
         responsiveFlex
         direction="column"
         style={{ marginTop: "4rem" }}
+        as={motion.div}
+        variants={fadeInLeftVariant}
+        initial="hidden"  
+        whileInView="visible"
       >
          <FlexContainer gap="20px" responsiveFlex>
           <SkillSectionHeading>Languages</SkillSectionHeading>
