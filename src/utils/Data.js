@@ -100,17 +100,17 @@ export const navLinks = [
   },
   {
     id: 1,
-    name: "My Skills",
+    name: "Skills",
     href: "Skills",
   },
   {
     id: 2,
-    name: "My Experience ",
+    name: "Experience ",
     href: "Experience",
   },
   {
     id: 3,
-    name: "My Projects ",
+    name: "Projects ",
     href: "Projects",
   },
   {

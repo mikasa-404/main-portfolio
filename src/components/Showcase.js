@@ -17,7 +17,6 @@ import {
   Image,
   Particle,
   StyledLink,
-  ResumeButoon,
 } from "../styles/Showcase.styled";
 import showcaseImage from "../assets/profile3.png"
 import BackgroundImage from "../assets/particle.png";
@@ -31,7 +30,7 @@ const Showcase = () => {
       id="Home"
       left="3%"
       right="8%"
-      top="14%"
+      top="12%"
       bottom="10%"
       responsiveTop="8rem"
       responsiveLeft="1rem"

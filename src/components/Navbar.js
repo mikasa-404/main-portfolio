@@ -59,6 +59,9 @@ const Navbar = () => {
                     <NavMenuButton key={index}
                         whileHover={{scale: 1.2}}
                         href={`#${link.href}`}  onClick={()=>setOpenMenu(false)}>{link.name}</NavMenuButton>
+                      
+                    //   {link.name}
+                    // </NavMenuButton>
                   );
                 })
               }

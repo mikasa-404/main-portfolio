@@ -89,6 +89,9 @@ export const ParaText = styled(PaddingContainer)`
 export const IconContainer = styled.div`
   font-size: ${({ size }) => size};
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   color: ${({ color, theme }) => {
     switch (color) {
       case "white":

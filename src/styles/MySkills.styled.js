@@ -29,3 +29,28 @@ export const SkillsCard=styled.div`
     }
     
 `
+export const SkillSectionHeading=styled.h4`
+    font-size: 1.5rem;
+    color: ${({theme})=>theme.colors.white};
+    margin-bottom: 1rem;
+`
+export const SkillButton = styled.button`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    border: 1px solid;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    font-size: '1.5rem';
+    text-decoration: none;
+    background-color: ${({theme})=>theme.colors.primary_light};
+    color: ${({ theme }) => theme.colors.white};
+    padding: 0.5rem 1rem;
+    font-weight: ${({ theme }) => theme.fonts.weight.medium};
+    &:hover {
+        color: ${({ theme }) => theme.colors.primary_light};
+        background-color: ${({ theme }) => theme.colors.white};
+    }
+
+`
