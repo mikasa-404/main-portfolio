@@ -159,7 +159,7 @@ const MySkills = () => {
         initial="hidden"  
         whileInView="visible"
       >
-         <FlexContainer gap="20px" responsiveFlex>
+         <FlexContainer gap="20px" responsiveFlex wrap>
           <SkillSectionHeading>Languages</SkillSectionHeading>
           {Languages.map((skill) => (
             <SkillButton key={skill.id}>
@@ -182,7 +182,7 @@ const MySkills = () => {
           ))}
         </FlexContainer> */}
         
-        <FlexContainer gap="20px" responsiveFlex> 
+        <FlexContainer gap="20px" responsiveFlex wrap> 
           <SkillSectionHeading>Frontend</SkillSectionHeading>
           {frontendSkills.map((skill) => (
             <SkillButton key={skill.id}>
@@ -193,7 +193,7 @@ const MySkills = () => {
             </SkillButton>
           ))}
         </FlexContainer>
-         <FlexContainer gap="20px" responsiveFlex> 
+         <FlexContainer gap="20px" responsiveFlex wrap> 
           <SkillSectionHeading>Backend</SkillSectionHeading>
           {backendSkills.map((skill) => (
             <SkillButton key={skill.id}>
@@ -204,7 +204,7 @@ const MySkills = () => {
             </SkillButton>
           ))}
           </FlexContainer>
-          <FlexContainer gap="20px" responsiveFlex> 
+          <FlexContainer gap="20px" responsiveFlex wrap> 
             <SkillSectionHeading>Others</SkillSectionHeading>
             {devOpsSkills.map((skill) => (
               <SkillButton key={skill.id}>
