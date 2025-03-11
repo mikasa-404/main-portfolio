@@ -5,7 +5,7 @@ import Project2 from "../assets/Screenshot from 2024-01-31 12-25-05.png";
 import Project3 from "../assets/ss1.png";
 import Project4 from "../assets/podcastPage.png";
 export const resumeLink =
-  "https://drive.google.com/file/d/1vvAV33aUfwPDyseY3XSwAcUpIWDs31Fj/view?usp=sharing";
+  "https://drive.google.com/file/d/1vzQ2EraujynF-TNJaqNFP7UuHJ9XLArG/view?usp=sharing";
 export const skills = [
   {
     id: 0,
