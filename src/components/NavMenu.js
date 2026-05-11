@@ -22,8 +22,10 @@ const NavMenu = ({setOpenMenu}) => {
         >
             <FlexContainer justify="flex-end" responsiveFlex>
                 <MenuIcon 
-                    as={motion.a}
+                    as={motion.button}
                     whileHover={{scale: 1.2}}
+                    type="button"
+                    aria-label="Close navigation menu"
                     onClick={()=>setOpenMenu(false)}>
                     <AiOutlineClose/>
                 </MenuIcon>

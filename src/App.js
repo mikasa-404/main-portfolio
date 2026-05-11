@@ -11,6 +11,8 @@ import TopFadeImage from "../src/assets/top.png";
 import AnimatedCursor from "react-animated-cursor";
 import Experience from "./components/Experience";
 import { Toaster } from "react-hot-toast";
+import ScrollProgress from "./components/ScrollProgress";
+
 function App() {
   return (
     <ThemeProvider theme={theme}>
@@ -19,6 +21,7 @@ function App() {
       </div>
       <MainBody>
         <Navbar />
+        <ScrollProgress />
         <Container>
           <Showcase />
           <MySkills />

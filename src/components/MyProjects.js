@@ -10,41 +10,47 @@ import { projects } from "../utils/Data";
 import { motion } from "framer-motion";
 import { fadeInTopVariant } from "../utils/Variants";
 import right from "../assets/right.png";
+import {
+  ProjectList,
+  ProjectSectionHeader,
+} from "../styles/MyProjects.styled";
 
 const MyProjects = () => {
   return (
     <PaddingContainer
       id="Projects"
-      top="10%"
-      bottom="5%"
-      responsiveTop="20%"
+      top="8%"
+      bottom="7%"
+      responsiveTop="12%"
       responsiveLeft="1rem"
       responsiveRight="1rem"
     >
       <FadeImage src={right} right="0" width="inherit" />
-      <Heading
-        as={motion.h4}
-        size="h4"
-        variants={fadeInTopVariant}
-        initial="hidden"
-        whileInView="visible"
-      >
-        MY PROJECTS
-      </Heading>
-      <Heading
-        as={motion.h2}
-        variants={fadeInTopVariant}
-        initial="hidden"
-        whileInView="visible"
-        size="h2"
-      >
-        What <BlueText>I have built</BlueText>
-      </Heading>
-      {projects.map((item) => (
-        <PaddingContainer top="5rem" bottom="5rem" key={item.id}>
-          <Project data={item} />
-        </PaddingContainer>
-      ))}
+      <ProjectSectionHeader>
+        <Heading
+          as={motion.h4}
+          size="h4"
+          variants={fadeInTopVariant}
+          initial="hidden"
+          whileInView="visible"
+        >
+          MY PROJECTS
+        </Heading>
+        <Heading
+          as={motion.h2}
+          variants={fadeInTopVariant}
+          initial="hidden"
+          whileInView="visible"
+          size="h2"
+        >
+          What <BlueText>I have built</BlueText>
+        </Heading>
+      </ProjectSectionHeader>
+      <ProjectList>
+        {projects.map((item, index) => (
+          <Project data={item} index={index} key={item.id} />
+        ))}
+      </ProjectList>
     </PaddingContainer>
   );
 };

@@ -4,22 +4,32 @@ import {
   Heading,
   BlueText,
   FlexContainer,
-  Button,
+  ParaText,
 } from "../styles/Global.styled";
-import { ContactForm, FormInput, FormLabel } from "../styles/Footer.styled";
+import {
+  ContactForm,
+  ContactGrid,
+  ContactIntro,
+  ContactLink,
+  ContactLinkGrid,
+  ContactShell,
+  FormInput,
+  FormLabel,
+  SubmitButton,
+} from "../styles/Footer.styled";
 import { motion } from "framer-motion";
 import { fadeInBottomVariant } from "../utils/Variants";
 import emailjs from "@emailjs/browser";
 import toast from "react-hot-toast";
+import { contactInfo } from "../utils/Data";
+
 const Footer = () => {
-  // const form = useRef();
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("called");
     const service_id = "service_v7jnuuu";
     const template_id = "template_y32cui8";
     const public_key = "o76N55bSnpRGOs1LK";
@@ -45,10 +55,12 @@ const Footer = () => {
   return (
     <PaddingContainer
       id="Contact"
-      top="10%"
-      bottom="10%"
+      top="8%"
+      bottom="9%"
       responsiveRight="1rem"
       responsiveLeft="1rem"
+      responsiveTop="12%"
+      responsiveBottom="12%"
       style={{
         overflow: "hidden",
       }}
@@ -75,8 +87,34 @@ const Footer = () => {
         Contact <BlueText>Me Here</BlueText>
       </Heading>
 
-      <PaddingContainer top="3rem">
-        <FlexContainer justify="center">
+      <ContactShell>
+        <ContactGrid>
+          <ContactIntro
+            as={motion.div}
+            variants={fadeInBottomVariant}
+            initial="hidden"
+            whileInView="visible"
+          >
+            <ParaText>
+              I am open to backend, full-stack, and product engineering
+              conversations where reliability, performance, and crisp user
+              experience matter.
+            </ParaText>
+            <ContactLinkGrid>
+              <ContactLink href={`mailto:${contactInfo.email}`}>
+                <span>Email</span>
+                <span>{contactInfo.email}</span>
+              </ContactLink>
+              <ContactLink href={contactInfo.linkedin} target="_blank" rel="noreferrer">
+                <span>LinkedIn</span>
+                <span>priyajha414</span>
+              </ContactLink>
+              <ContactLink href={contactInfo.github} target="_blank" rel="noreferrer">
+                <span>GitHub</span>
+                <span>mikasa-404</span>
+              </ContactLink>
+            </ContactLinkGrid>
+          </ContactIntro>
           <ContactForm
             as={motion.form}
             variants={fadeInBottomVariant}
@@ -113,13 +151,11 @@ const Footer = () => {
             </PaddingContainer>
 
             <FlexContainer justify="center" responsiveFlex>
-              <button type="submit">
-                <Button>Send Message</Button>
-              </button>
+              <SubmitButton type="submit">Send Message</SubmitButton>
             </FlexContainer>
           </ContactForm>
-        </FlexContainer>
-      </PaddingContainer>
+        </ContactGrid>
+      </ContactShell>
     </PaddingContainer>
   );
 };

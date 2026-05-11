@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import {resumeLink} from "../utils/Data"
+import { contactInfo } from "../utils/Data";
 import {
   PaddingContainer,
   Heading,
@@ -12,17 +12,27 @@ import {
 import { BsLinkedin, BsGithub } from "react-icons/bs";
 import { SiLeetcode } from "react-icons/si";
 import {
+  HeroFlow,
+  HeroFlowDivider,
+  HeroFlowItem,
+  HeroKicker,
+  HeroLayout,
+  HeroLocation,
+  HeroTextBlock,
+  HeroTypingLine,
+  HeroVisual,
+  KickerDot,
   ShowcaseParticleContainer,
   ShowcaseImageCard,
   Image,
   Particle,
   StyledLink,
+  TypingText,
 } from "../styles/Showcase.styled";
-import showcaseImage from "../assets/profile3.png"
+import showcaseImage from "../assets/profile3.png";
 import BackgroundImage from "../assets/particle.png";
 import { fadeInLeftVariant, fadeInRightVariant } from "../utils/Variants";
 import { TypeAnimation } from "react-type-animation";
-import ScrollMouse from "./ScrollMouse";
 
 const Showcase = () => {
   return (
@@ -30,94 +40,110 @@ const Showcase = () => {
       id="Home"
       left="3%"
       right="8%"
-      top="12%"
-      bottom="10%"
-      responsiveTop="8rem"
+      top="clamp(9.25rem, 14vh, 11rem)"
+      bottom="5%"
+      responsiveTop="8.25rem"
       responsiveLeft="1rem"
       responsiveRight="1rem"
-      style={{
-      }}
     >
-      <FlexContainer align="center" justify="space-between">
-        {/*left content */}
-        <motion.div
+      <HeroLayout>
+        <HeroTextBlock
+          as={motion.div}
           style={{ textAlign: "left" }}
           variants={fadeInLeftVariant}
           initial="hidden"
           whileInView="visible"
         >
+          <HeroKicker>
+            <KickerDot />
+            Priya Jha | Software Development Engineer I at Spyne AI
+          </HeroKicker>
           <Heading as="h2" size="h2" top="0.5rem" bottom="1rem">
-            <span style={{
-              'font-size': '2rem',
-            }}>Hello, I'm </span><BlueText>Priya Jha!</BlueText>
+            I build <BlueText>reliable systems</BlueText> for fast-moving
+            product teams.
           </Heading>
-          <Heading as="h3" size="h3">
-            A{" "}
-            <BlueText>
+          <HeroTypingLine>
+            <span>I ship</span>
+            <TypingText>
               <TypeAnimation
                 sequence={[
-                  "FullStack developer",
+                  "high-throughput APIs",
                   1000,
-                  "Problem solver",
+                  "real-time sync flows",
                   1000,
-                  "Tech enthusiast",
+                  "AI engagement tools",
+                  1000,
+                  "polished React UI",
                   1000,
                 ]}
                 speed={50}
                 repeat={Infinity}
               />
-            </BlueText>
-          </Heading>
-          <Heading as="h3" size="h3" top="0.5rem" bottom="1rem">Based in India.</Heading>
-          <ParaText as="p" top="1rem" bottom="3rem" style={{
-            maxWidth: "80%",
-          }}>
-            {/* I'm a passionate web developer currently pursuing my Master's in
-            Mathematics and Computing at IIT(ISM) Dhanbad (expected graduation
-            May 2024). While honing my theoretical knowledge, I'm also gaining
-            practical experience as a Software Development Engineer Intern at
-            The Internet Folks.<br/>
-            Problem-solving is at the core of my approach to web development. I
-            thrive on the challenge of translating complex ideas into
-            user-friendly and impactful web applications.<br/>
-            Let's connect and turn your ideas into reality! */}
-            I'm a Software developer currently working at Spyne with a  Master's in Mathematics & Computing from IIT Dhanbad. 
-            Always curious to learn more when it comes to  new technologies and creative coding. 
+            </TypingText>
+          </HeroTypingLine>
+          <HeroLocation>Based in Gurgaon, India.</HeroLocation>
+          <ParaText
+            as="p"
+            top="1rem"
+            style={{
+              maxWidth: "680px",
+            }}
+          >
+            I am a Software Development Engineer at Spyne AI, working across
+            high-throughput backend services, event-driven workflows,
+            AI-powered customer engagement, and production-grade React/Next.js
+            experiences.
           </ParaText>
-         
 
-          {/* social icons */}
+          <HeroFlow aria-label="Engineering focus areas">
+            <HeroFlowItem>Backend systems</HeroFlowItem>
+            <HeroFlowDivider />
+            <HeroFlowItem>Distributed flows</HeroFlowItem>
+            <HeroFlowDivider />
+            <HeroFlowItem>AI workflows</HeroFlowItem>
+            <HeroFlowDivider />
+            <HeroFlowItem>Frontend polish</HeroFlowItem>
+          </HeroFlow>
+
           <FlexContainer gap="20px" responsiveFlex>
             <IconContainer color="white" size="2rem">
               <StyledLink
-                target="blank"
-                href="https://www.linkedin.com/in/priyajha414"
+                target="_blank"
+                rel="noreferrer"
+                href={contactInfo.linkedin}
+                aria-label="LinkedIn profile"
               >
                 <BsLinkedin />
               </StyledLink>
             </IconContainer>
             <IconContainer color="white" size="2rem">
-              <StyledLink target="blank" href="https://github.com/mikasa-404">
+              <StyledLink
+                target="_blank"
+                rel="noreferrer"
+                href={contactInfo.github}
+                aria-label="GitHub profile"
+              >
                 <BsGithub />
               </StyledLink>
             </IconContainer>
             <IconContainer color="white" size="2rem">
-              <StyledLink target="blank" href="https://leetcode.com/mikasa404/">
+              <StyledLink
+                target="_blank"
+                rel="noreferrer"
+                href={contactInfo.leetcode}
+                aria-label="LeetCode profile"
+              >
                 <SiLeetcode />
               </StyledLink>
             </IconContainer>
           </FlexContainer>
-         
-        </motion.div>
+        </HeroTextBlock>
 
-        {/* right content */}
-        <FlexContainer
+        <HeroVisual
           as={motion.div}
-          align="flex-end"
           variants={fadeInRightVariant}
           initial="hidden"
           whileInView="visible"
-              
         >
           <ShowcaseParticleContainer>
             <ShowcaseImageCard>
@@ -175,9 +201,8 @@ const Showcase = () => {
               rotate="50deg"
             />
           </ShowcaseParticleContainer>
-        </FlexContainer>
-      </FlexContainer>
-      <ScrollMouse/>
+        </HeroVisual>
+      </HeroLayout>
     </PaddingContainer>
   );
 };

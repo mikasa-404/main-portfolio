@@ -6,20 +6,35 @@ import {
   FadeImage,
 } from "../styles/Global.styled";
 import { motion } from "framer-motion";
-import { fadeInTopVariant } from "../utils/Variants";
-import {
-  VerticalTimeline,
-  VerticalTimelineElement,
-} from "react-vertical-timeline-component";
-import "react-vertical-timeline-component/style.min.css";
+import { fadeInBottomVariant, fadeInTopVariant } from "../utils/Variants";
+import { FiBriefcase, FiCalendar, FiMapPin } from "react-icons/fi";
 import left from "../assets/left.png";
+import { experienceItems } from "../utils/Data";
+import {
+  AchievementItem,
+  AchievementList,
+  ExperienceBadge,
+  ExperienceCard,
+  ExperienceContent,
+  ExperienceList,
+  ExperienceMarker,
+  ExperienceRail,
+  ExperienceTrack,
+  ImpactPill,
+  ImpactPillRow,
+  MetaGroup,
+  MetaItem,
+  TimelineMeta,
+  TimelineSubtitle,
+  TimelineTitle,
+} from "../styles/Experience.styled";
 
 const Experience = () => {
   return (
     <PaddingContainer
       id="Experience"
-      top="10%"
-      bottom="10%"
+      top="7%"
+      bottom="7%"
       responsiveRight="1rem"
       responsiveLeft="1rem"
     >
@@ -45,60 +60,68 @@ const Experience = () => {
       >
         Where <BlueText>I have worked</BlueText>
       </Heading>
-      <PaddingContainer top="5%">
-        <VerticalTimeline>
-          <VerticalTimelineElement
-            contentStyle={{ background: "#191919", color: "#fff" }}
-            contentArrowStyle={{ borderRight: "7px solid  #191919" }}
-            date="Aug 2024- Present"
-            iconStyle={{ background: "#88AB8E", color: "#fff" }}
-          >
-            <h3 className="vertical-timeline-element-title">
-              SDE Intern - FullStack
-            </h3>
-            <h4 className="vertical-timeline-element-subtitle">
-              Spyne 
-            </h4>
-            <p>
-            Working as a Full-stack developer in the 360 team, creating immersive 360-degree views of cars
-            </p>
-          </VerticalTimelineElement>
-          <VerticalTimelineElement
-            contentStyle={{ background: "#191919", color: "#88AB8E" }}
-            contentArrowStyle={{ borderRight: "7px solid  #191919" }}
-            date="Feb 2024- July 2024"
-            iconStyle={{ background: "#88AB8E", color: "#fff" }}
-          >
-             <h3 className="vertical-timeline-element-title">
-              Frontend Developer Intern
-            </h3>
-            <h4 className="vertical-timeline-element-subtitle">
-              The Internet Folks
-            </h4>
-            <p>
-              Worked as a frontend intern, contributing to building scalable no-code solutions, developing user-friendly event registration flows, and enhancing client websites. </p>
-          </VerticalTimelineElement>
-          <VerticalTimelineElement
-            contentStyle={{ background: "#191919", color: "#fff" }}
-            contentArrowStyle={{ borderRight: "7px solid  #191919" }}
-            date="June 2022- May 2024"
-            iconStyle={{ background: "#88AB8E", color: "#fff" }}
-          >
-             <h3 className="vertical-timeline-element-title">
-              M.S. Mathematics and Computing
-            </h3>
-            <h4 className="vertical-timeline-element-subtitle">
-              Indian Institute of Technology(ISM) Dhanbad
-            </h4>
-            <p>
-              Pursued a Master's in Mathematics and Computing providing me a
-              well-rounded skill set with strong foundation in computer science
-              fundamentals, problem-solving, analytical thinking, and
-              programming skills.
-            </p>
-          </VerticalTimelineElement>
-        </VerticalTimeline>
-      </PaddingContainer>
+      <ExperienceTrack
+        as={motion.div}
+        variants={fadeInBottomVariant}
+        initial="hidden"
+        whileInView="visible"
+      >
+        <ExperienceList>
+          {experienceItems.map((item, index) => (
+            <ExperienceCard
+              key={item.id}
+              as={motion.article}
+              whileHover={{ y: -4 }}
+              $accent={item.accent}
+            >
+              <ExperienceRail>
+                <ExperienceMarker $accent={item.accent}>
+                  <FiBriefcase />
+                </ExperienceMarker>
+              </ExperienceRail>
+
+              <ExperienceContent>
+                <TimelineMeta>
+                  <ExperienceBadge $accent={item.accent}>
+                    {item.accent
+                      ? "Current"
+                      : index === experienceItems.length - 1
+                        ? "Education"
+                        : "Experience"}
+                  </ExperienceBadge>
+                  <MetaGroup>
+                    <MetaItem>
+                      <FiCalendar />
+                      {item.date}
+                    </MetaItem>
+                    <MetaItem>
+                      <FiMapPin />
+                      {item.location}
+                    </MetaItem>
+                  </MetaGroup>
+                </TimelineMeta>
+
+                <TimelineTitle>{item.role}</TimelineTitle>
+                <TimelineSubtitle>{item.company}</TimelineSubtitle>
+
+                <AchievementList>
+                  {item.highlights.map((highlight, highlightIndex) => (
+                    <AchievementItem key={highlightIndex}>
+                      {highlight}
+                    </AchievementItem>
+                  ))}
+                </AchievementList>
+
+                <ImpactPillRow>
+                  {item.impact.map((metric, metricIndex) => (
+                    <ImpactPill key={metricIndex}>{metric}</ImpactPill>
+                  ))}
+                </ImpactPillRow>
+              </ExperienceContent>
+            </ExperienceCard>
+          ))}
+        </ExperienceList>
+      </ExperienceTrack>
     </PaddingContainer>
   );
 };

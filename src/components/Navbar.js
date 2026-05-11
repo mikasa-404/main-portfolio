@@ -1,27 +1,44 @@
 import React, { useEffect, useState } from "react";
-import {
-  FlexContainer,
-  PaddingContainer,
-  Container,
-  BlueText,
-} from "../styles/Global.styled";
+import { Container } from "../styles/Global.styled";
 import { GiHamburgerMenu } from "react-icons/gi";
-import { NavbarContainer, Logo, MenuIcon, NavMenuButton } from "../styles/Navbar.styled";
-import { theme } from "../utils/Theme";
+import {
+  Logo,
+  MenuIcon,
+  NavbarContainer,
+  NavbarShell,
+  NavLinksGroup,
+  NavMenuButton,
+  ResumeNavButton,
+} from "../styles/Navbar.styled";
 import NavMenu from "./NavMenu";
 import { AnimatePresence, motion } from "framer-motion";
-import { ResumeButoon } from "../styles/Showcase.styled";
 import { navLinks, resumeLink } from "../utils/Data";
 import { FaDownload } from "react-icons/fa6";
 
 const Navbar = () => {
   const [openMenu, setOpenMenu] = useState(false);
   const [sticky, setSticky] = useState(false);
+  const [activeSection, setActiveSection] = useState("Home");
 
   useEffect(() => {
     const onScroll = () => {
-      window.scrollY > 50 ? setSticky(true) : setSticky(false);
+      setSticky(window.scrollY > 35);
+
+      const currentSection = navLinks.reduce((current, link) => {
+        const section = document.getElementById(link.href);
+
+        if (!section) {
+          return current;
+        }
+
+        const sectionTop = section.getBoundingClientRect().top;
+        return sectionTop <= 160 ? link.href : current;
+      }, "Home");
+
+      setActiveSection(currentSection);
     };
+
+    onScroll();
     window.addEventListener("scroll", onScroll);
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
@@ -34,69 +51,52 @@ const Navbar = () => {
   };
 
   return (
-    <NavbarContainer bgColor={sticky ? theme.colors.primary : "transparent"}>
-      <PaddingContainer
-        top="2rem"
-        bottom="2rem"
-        responsiveLeft="1rem"
-        responsiveRight="1rem"
-        responsiveTop="1rem"
-        responsiveBottom="1rem"
-      >
-        <Container>
-          <FlexContainer justify="space-between" responsiveFlex>
-            {/* letf-logo */}
-            <div onClick={scrollToTop}>
-              <Logo>
-                PriyaJha<BlueText>.dev</BlueText>
-              </Logo>
-            </div>
-            {/* middle-content */}
-            <FlexContainer align="center" justify="center" gap="12px" responsiveFlex>
-              {
-                navLinks.map((link, index) => {
-                  return (
-                    <NavMenuButton key={index}
-                        whileHover={{scale: 1.2}}
-                        href={`#${link.href}`}  onClick={()=>setOpenMenu(false)}>{link.name}</NavMenuButton>
-                      
-                    //   {link.name}
-                    // </NavMenuButton>
-                  );
-                })
-              }
-               
-            </FlexContainer>
-            {/* right-icon */}
+    <NavbarContainer $sticky={sticky}>
+      <Container>
+        <NavbarShell $sticky={sticky}>
+          <Logo onClick={scrollToTop} aria-label="Scroll to top">
+            <span>
+              PriyaJha<strong>.dev</strong>
+            </span>
+          </Logo>
 
-            <ResumeButoon href={resumeLink} target="blank">
-              Resume
-              <span
-                style={{
-                  paddingTop: "3px",
-                }}
+          <NavLinksGroup>
+            {navLinks.map((link) => (
+              <NavMenuButton
+                key={link.id}
+                as={motion.a}
+                whileHover={{ y: -2 }}
+                href={`#${link.href}`}
+                onClick={() => setOpenMenu(false)}
+                $active={activeSection === link.href}
               >
-                <FaDownload size={16} />
-              </span>
-            </ResumeButoon>
+                {link.name}
+              </NavMenuButton>
+            ))}
+          </NavLinksGroup>
 
-            <MenuIcon
-              as={motion.a}
-              whileHover={{ scale: 1.2 }}
-              onClick={() => {
-                setOpenMenu(true);
-              }}
-            >
-              {" "}
-              <GiHamburgerMenu />
-            </MenuIcon>
-          </FlexContainer>
-        </Container>
+          <ResumeNavButton href={resumeLink} target="_blank" rel="noreferrer">
+            Resume
+            <FaDownload size={15} />
+          </ResumeNavButton>
 
-        <AnimatePresence>
-          {openMenu && <NavMenu setOpenMenu={setOpenMenu} />}
-        </AnimatePresence>
-      </PaddingContainer>
+          <MenuIcon
+            as={motion.button}
+            whileHover={{ scale: 1.08 }}
+            type="button"
+            aria-label="Open navigation menu"
+            onClick={() => {
+              setOpenMenu(true);
+            }}
+          >
+            <GiHamburgerMenu />
+          </MenuIcon>
+        </NavbarShell>
+      </Container>
+
+      <AnimatePresence>
+        {openMenu && <NavMenu setOpenMenu={setOpenMenu} />}
+      </AnimatePresence>
     </NavbarContainer>
   );
 };

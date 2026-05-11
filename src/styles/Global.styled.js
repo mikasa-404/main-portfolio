@@ -10,12 +10,14 @@ export const Container = styled.div`
 `;
 
 export const PaddingContainer = styled.div`
+  scroll-margin-top: 9rem;
   padding-top: ${({ top }) => top};
   padding-bottom: ${({ bottom }) => bottom};
   padding-left: ${({ left }) => left};
   padding-right: ${({ right }) => right};
   /* border: 2px solid red; */
   @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    scroll-margin-top: 6.5rem;
     padding-top: ${({ responsiveTop }) => responsiveTop};
     padding-bottom: ${({ responsiveBottom }) => responsiveBottom};
     padding-left: ${({ responsiveLeft }) => responsiveLeft};
@@ -82,7 +84,7 @@ export const BlueText = styled.span`
 
 export const ParaText = styled(PaddingContainer)`
   color: ${({ theme }) => theme.colors.para_text_color};
-  line-height: 1.75drem;
+  line-height: 1.75rem;
   font-size: 1.1rem;
 `;
 
@@ -107,10 +109,11 @@ export const IconContainer = styled.div`
 export const Button = styled.a`
   display: inline-block;
   width: max-content;
+  min-height: 52px;
   padding: 1rem 2rem;
   color: ${({ theme }) => theme.colors.white};
   background-color: ${({ theme }) => theme.colors.primary_light};
-  border: 1px solid #fff;
+  border: 1px solid rgba(255, 255, 255, 0.85);
   border-radius: 5px;
   cursor: pointer;
   transition: all 0.3s ease;
