@@ -96,9 +96,10 @@ const Footer = () => {
             whileInView="visible"
           >
             <ParaText>
-              I am open to backend, full-stack, and product engineering
-              conversations where reliability, performance, and crisp user
-              experience matter.
+              I am open to backend and full-stack engineering conversations,
+              especially on distributed systems, event-driven pipelines, and
+              anything that gets interesting under concurrency. Remote or
+              on-site both work for me.
             </ParaText>
             <ContactLinkGrid>
               <ContactLink href={`mailto:${contactInfo.email}`}>

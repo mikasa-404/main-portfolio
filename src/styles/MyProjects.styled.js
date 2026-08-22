@@ -118,7 +118,12 @@ export const ProjectFace = styled.div`
   }
 `;
 
-export const ProjectFront = styled.div``;
+export const ProjectFront = styled.div`
+  /* reserve two title lines so the preview and impact blocks line up across cards */
+  h3 {
+    min-height: calc(2.4em + 0.7rem);
+  }
+`;
 
 export const ProjectBack = styled.div`
   transform: rotateY(180deg);
@@ -205,14 +210,26 @@ export const TechStackMore = styled(TechStackCard)`
 export const FlipHint = styled.p`
   display: inline-flex;
   align-items: center;
+  gap: 0.4rem;
   width: max-content;
   margin-top: auto;
-  padding: 0.35rem 0.65rem;
-  border: 1px solid rgba(136, 171, 142, 0.26);
-  border-radius: 999px;
-  color: ${({ theme }) => theme.colors.secondary};
-  background-color: rgba(136, 171, 142, 0.08);
-  font-size: 0.9rem;
+  padding-top: 1.1rem;
+  color: rgba(255, 255, 255, 0.42);
+  font-size: 0.85rem;
+  transition: color 0.3s ease;
+
+  svg {
+    font-size: 0.9rem;
+    transition: transform 0.45s ease;
+  }
+
+  ${ProjectCard}:hover & {
+    color: ${({ theme }) => theme.colors.secondary};
+  }
+
+  ${ProjectCard}:hover & svg {
+    transform: rotate(180deg);
+  }
 `;
 
 export const ProjectDetailsTitle = styled.p`

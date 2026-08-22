@@ -1,5 +1,27 @@
 import styled from "styled-components";
 
+export const TimelineHeader = styled.div`
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+`;
+
+export const TimelineDate = styled.span`
+  display: inline-flex;
+  align-items: center;
+  min-height: 30px;
+  padding: 0 0.75rem;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 999px;
+  background-color: rgba(255, 255, 255, 0.05);
+  color: ${({ theme }) => theme.colors.white};
+  font-size: 0.85rem;
+  white-space: nowrap;
+  flex-shrink: 0;
+`;
+
 export const TimelineTitle = styled.h3`
   color: ${({ theme }) => theme.colors.white};
   font-size: 1.35rem;
@@ -48,4 +70,21 @@ export const ImpactPill = styled.span`
   color: ${({ theme }) => theme.colors.white};
   background-color: rgba(136, 171, 142, 0.12);
   font-size: 0.9rem;
+`;
+
+export const ToggleButton = styled.button`
+  margin-top: 1rem;
+  padding: 0.45rem 0.9rem;
+  border: 1px solid rgba(136, 171, 142, 0.45);
+  border-radius: 999px;
+  background: transparent;
+  color: ${({ theme }) => theme.colors.secondary};
+  font-family: inherit;
+  font-size: 0.88rem;
+  cursor: pointer;
+  transition: background-color 0.25s ease;
+
+  &:hover {
+    background-color: rgba(136, 171, 142, 0.14);
+  }
 `;

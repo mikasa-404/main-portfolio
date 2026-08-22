@@ -59,8 +59,7 @@ const Showcase = () => {
             Priya Jha | Software Development Engineer I at Spyne AI
           </HeroKicker>
           <Heading as="h2" size="h2" top="0.5rem" bottom="1rem">
-            I build <BlueText>reliable systems</BlueText> for fast-moving
-            product teams.
+            I build <BlueText>backend systems</BlueText> that hold up at scale.
           </Heading>
           <HeroTypingLine>
             <span>I ship</span>
@@ -69,11 +68,11 @@ const Showcase = () => {
                 sequence={[
                   "high-throughput APIs",
                   1000,
-                  "real-time sync flows",
+                  "event-driven pipelines",
                   1000,
-                  "AI engagement tools",
+                  "zero-downtime migrations",
                   1000,
-                  "polished React UI",
+                  "search read models",
                   1000,
                 ]}
                 speed={50}
@@ -89,20 +88,21 @@ const Showcase = () => {
               maxWidth: "680px",
             }}
           >
-            I am a Software Development Engineer at Spyne AI, working across
-            high-throughput backend services, event-driven workflows,
-            AI-powered customer engagement, and production-grade React/Next.js
-            experiences.
+            I am a Software Development Engineer at Spyne AI, building
+            NestJS and Node.js microservices, event-driven pipelines on AWS,
+            and Elasticsearch read models — most recently a zero-downtime
+            migration of ~3M documents with no data loss. What pulls me in is
+            how systems behave at scale and under concurrency.
           </ParaText>
 
           <HeroFlow aria-label="Engineering focus areas">
-            <HeroFlowItem>Backend systems</HeroFlowItem>
+            <HeroFlowItem>Distributed systems</HeroFlowItem>
             <HeroFlowDivider />
-            <HeroFlowItem>Distributed flows</HeroFlowItem>
+            <HeroFlowItem>Event-driven pipelines</HeroFlowItem>
+            <HeroFlowDivider />
+            <HeroFlowItem>Data migrations</HeroFlowItem>
             <HeroFlowDivider />
             <HeroFlowItem>AI workflows</HeroFlowItem>
-            <HeroFlowDivider />
-            <HeroFlowItem>Frontend polish</HeroFlowItem>
           </HeroFlow>
 
           <FlexContainer gap="20px" responsiveFlex>

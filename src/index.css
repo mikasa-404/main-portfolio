@@ -30,3 +30,37 @@ code {
 ::-webkit-scrollbar {
   display: none;
 }
+
+/* Date is rendered inside the timeline card header, so hide the library's own slot */
+.vertical-timeline-element-date {
+  display: none !important;
+}
+
+/* Tighter timeline rail on small screens so the cards keep usable text width */
+@media only screen and (max-width: 600px) {
+  .vertical-timeline {
+    width: 100%;
+    padding: 1em 0;
+  }
+  .vertical-timeline::before {
+    left: 13px;
+    width: 3px;
+  }
+  .vertical-timeline-element-icon {
+    width: 30px;
+    height: 30px;
+  }
+  .vertical-timeline-element-icon svg {
+    width: 18px;
+    height: 18px;
+    margin-left: -9px;
+    margin-top: -9px;
+  }
+  .vertical-timeline-element-content {
+    margin-left: 46px;
+    padding: 1.1rem 1rem;
+  }
+  .vertical-timeline-element {
+    margin: 1.5em 0;
+  }
+}

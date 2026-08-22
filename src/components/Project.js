@@ -3,7 +3,7 @@ import {
   Heading,
   ParaText,
 } from "../styles/Global.styled";
-import { FaExternalLinkAlt, FaGithub } from "react-icons/fa";
+import { FaExternalLinkAlt, FaGithub, FaSyncAlt } from "react-icons/fa";
 import {
   FlipHint,
   ProjectBack,
@@ -87,7 +87,10 @@ const Project = ({ data, index }) => {
             ))}
             {hiddenTechCount > 0 && <TechStackMore>+{hiddenTechCount}</TechStackMore>}
           </TechStackList>
-          <FlipHint>Hover or tap to flip</FlipHint>
+          <FlipHint aria-hidden="true">
+            <FaSyncAlt />
+            Flip for details
+          </FlipHint>
         </ProjectFace>
 
         <ProjectFace as={ProjectBack}>

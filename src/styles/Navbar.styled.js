@@ -34,6 +34,11 @@ export const NavbarShell = styled.nav`
   backdrop-filter: blur(16px);
   transition: border-color 0.28s ease, box-shadow 0.28s ease, background 0.28s ease;
 
+  @media (max-width: 900px) and (min-width: 721px) {
+    gap: 0.6rem;
+    padding: 0.5rem 0.5rem 0.5rem 0.85rem;
+  }
+
   @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
     grid-template-columns: 1fr auto;
     min-height: 58px;
@@ -59,6 +64,10 @@ export const Logo = styled.button`
     font-weight: ${({ theme }) => theme.fonts.weight.bold};
   }
 
+  @media (max-width: 900px) and (min-width: 721px) {
+    font-size: 1.15rem;
+  }
+
   @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
     font-size: 1.15rem;
   }
@@ -73,6 +82,11 @@ export const NavLinksGroup = styled.div`
   border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 999px;
   background-color: rgba(255, 255, 255, 0.045);
+
+  @media (max-width: 900px) and (min-width: 721px) {
+    gap: 0;
+    padding: 0.25rem;
+  }
 
   @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
     display: none;
@@ -103,6 +117,12 @@ export const NavMenuButton = styled.a`
     background-color: ${({ $active, theme }) =>
       $active ? theme.colors.secondary : "rgba(255, 255, 255, 0.08)"};
   }
+
+  @media (max-width: 900px) and (min-width: 721px) {
+    min-height: 34px;
+    padding: 0 0.6rem;
+    font-size: 0.85rem;
+  }
 `;
 
 export const ResumeNavButton = styled.a`
@@ -125,6 +145,13 @@ export const ResumeNavButton = styled.a`
     transform: translateY(-2px);
     color: ${({ theme }) => theme.colors.primary_light};
     background-color: ${({ theme }) => theme.colors.white};
+  }
+
+  @media (max-width: 900px) and (min-width: 721px) {
+    min-height: 38px;
+    gap: 0.4rem;
+    padding: 0 0.75rem;
+    font-size: 0.88rem;
   }
 
   @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {

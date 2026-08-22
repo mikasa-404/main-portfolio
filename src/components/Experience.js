@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   PaddingContainer,
   Heading,
@@ -19,10 +19,41 @@ import {
   AchievementList,
   ImpactPill,
   ImpactPillRow,
+  TimelineDate,
+  TimelineHeader,
   TimelineMeta,
   TimelineSubtitle,
   TimelineTitle,
+  ToggleButton,
 } from "../styles/Experience.styled";
+
+const VISIBLE_HIGHLIGHTS = 5;
+
+const TimelineHighlights = ({ highlights }) => {
+  const [expanded, setExpanded] = useState(false);
+  const isCollapsible = highlights.length > VISIBLE_HIGHLIGHTS;
+  const visible =
+    isCollapsible && !expanded
+      ? highlights.slice(0, VISIBLE_HIGHLIGHTS)
+      : highlights;
+
+  return (
+    <>
+      <AchievementList>
+        {visible.map((highlight, index) => (
+          <AchievementItem key={index}>{highlight}</AchievementItem>
+        ))}
+      </AchievementList>
+      {isCollapsible && (
+        <ToggleButton type="button" onClick={() => setExpanded(!expanded)}>
+          {expanded
+            ? "Show less"
+            : `Show ${highlights.length - VISIBLE_HIGHLIGHTS} more`}
+        </ToggleButton>
+      )}
+    </>
+  );
+};
 
 const Experience = () => {
   return (
@@ -56,7 +87,7 @@ const Experience = () => {
         Where <BlueText>I have worked</BlueText>
       </Heading>
       <PaddingContainer top="3.5%">
-        <VerticalTimeline>
+        <VerticalTimeline layout="1-column-left" lineColor="rgba(136, 171, 142, 0.35)">
           {experienceItems.map((item) => (
             <VerticalTimelineElement
               key={item.id}
@@ -71,17 +102,17 @@ const Experience = () => {
                 boxShadow: "0 18px 48px rgba(0, 0, 0, 0.28)",
               }}
               contentArrowStyle={{ borderRight: "7px solid #191919" }}
-              date={item.date}
               iconStyle={{ background: "#88AB8E", color: "#fff" }}
             >
-              <TimelineTitle>{item.role}</TimelineTitle>
-              <TimelineSubtitle>{item.company}</TimelineSubtitle>
-              <TimelineMeta>{item.location}</TimelineMeta>
-              <AchievementList>
-                {item.highlights.map((highlight, index) => (
-                  <AchievementItem key={index}>{highlight}</AchievementItem>
-                ))}
-              </AchievementList>
+              <TimelineHeader>
+                <div>
+                  <TimelineTitle>{item.role}</TimelineTitle>
+                  <TimelineSubtitle>{item.company}</TimelineSubtitle>
+                  <TimelineMeta>{item.location}</TimelineMeta>
+                </div>
+                <TimelineDate>{item.date}</TimelineDate>
+              </TimelineHeader>
+              <TimelineHighlights highlights={item.highlights} />
               <ImpactPillRow>
                 {item.impact.map((metric, index) => (
                   <ImpactPill key={index}>{metric}</ImpactPill>
