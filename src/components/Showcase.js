@@ -68,16 +68,18 @@ const Showcase = () => {
             <TypingText>
               <TypeAnimation
                 sequence={[
-                  "event-driven pipelines",
+                  "event-driven systems",
                   1000,
-                  "idempotent consumers",
+                  "reliable microservices",
                   1000,
                   "LLM-powered workflows",
                   1000,
-                  "zero-downtime migrations",
+                  "serverless workflows",
                   1000,
-                  "search read models",
+                  "fault-tolerant pipelines",
                   1000,
+                  "real-time data pipelines",
+                  1000
                 ]}
                 speed={50}
                 repeat={Infinity}
@@ -92,23 +94,19 @@ const Showcase = () => {
               maxWidth: "680px",
             }}
           >
-            I'm a backend engineer at Spyne AI, working on Vini AI, an AI
-            agent that follows up with car-dealership leads over SMS and
-            calls. I designed and built its follow-up engine (NestJS, SQS
-            FIFO, EventBridge Scheduler) so no lead is texted twice or after
-            opting out. I also built a serverless pipeline that maintains
-            600K+ customer personas across 160+ dealerships, and migrated ~3M
-            documents to a new CRM service with zero downtime.
+            I’m a backend engineer working on event-driven distributed systems and microservices. I’m curious about architecture and how systems behave under load and failure, and I love breaking a hard problem down until it’s simple. If you have one worth solving, reach out.
           </ParaText>
 
           <HeroFlow aria-label="Engineering focus areas">
-            <HeroFlowItem>Event-driven systems</HeroFlowItem>
+            <HeroFlowItem>Distributed systems</HeroFlowItem>
             <HeroFlowDivider />
             <HeroFlowItem>Fault tolerance</HeroFlowItem>
             <HeroFlowDivider />
-            <HeroFlowItem>LLM pipelines</HeroFlowItem>
+            <HeroFlowItem>Event-driven architecture</HeroFlowItem>
             <HeroFlowDivider />
-            <HeroFlowItem>Data migrations</HeroFlowItem>
+            <HeroFlowItem>System Design</HeroFlowItem>
+                        <HeroFlowDivider />
+            <HeroFlowItem>Microservices</HeroFlowItem>
           </HeroFlow>
 
           <FlexContainer gap="20px" responsiveFlex>
