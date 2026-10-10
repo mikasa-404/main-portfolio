@@ -62,7 +62,7 @@ import {
   import Project4 from "../assets/podcastPage.png";
   
   export const resumeLink =
-    "https://drive.google.com/file/d/1sIGh3ah29W7MlcrQ3c7sPoKYPnraa7NW/view?usp=sharing";
+    "https://drive.google.com/file/d/1O-B6lRJjMCBQHJwkXh5AKbWbjrbEMhp2/view?usp=sharing";
   
   export const contactInfo = {
     email: "priyajha8218@gmail.com",
@@ -96,8 +96,6 @@ import {
         { id: 5, tech: "REST APIs", icon: <AiOutlineApi /> },
         { id: 6, tech: "gRPC", icon: <SiTrpc /> },
         { id: 7, tech: "Microservices", icon: <FaServer /> },
-        { id: 8, tech: "Echo (Go)", icon: <SiGoland /> },
-        { id: 9, tech: "Chi (Go)", icon: <SiGoland /> },
       ],
     },
     {
