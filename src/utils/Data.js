@@ -62,7 +62,7 @@ import {
   import Project4 from "../assets/podcastPage.png";
   
   export const resumeLink =
-    "https://drive.google.com/file/d/1cW9Dby1gZQ-e4pQaFzU7Nb4y9Xm16SM8/view?usp=sharing";
+    "https://drive.google.com/file/d/1sIGh3ah29W7MlcrQ3c7sPoKYPnraa7NW/view?usp=sharing";
   
   export const contactInfo = {
     email: "priyajha8218@gmail.com",

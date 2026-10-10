@@ -53,22 +53,26 @@ const Showcase = () => {
           variants={fadeInLeftVariant}
           initial="hidden"
           whileInView="visible"
+          viewport={{ once: true }}
         >
           <HeroKicker>
             <KickerDot />
-            Priya Jha | Software Development Engineer I at Spyne AI
+            Priya Jha | Backend Engineer (SDE I) at Spyne AI
           </HeroKicker>
           <Heading as="h2" size="h2" top="0.5rem" bottom="1rem">
-            I build <BlueText>backend systems</BlueText> that hold up at scale.
+            I build <BlueText>backend systems</BlueText> that stay correct
+            when things fail.
           </Heading>
           <HeroTypingLine>
             <span>I ship</span>
             <TypingText>
               <TypeAnimation
                 sequence={[
-                  "high-throughput APIs",
-                  1000,
                   "event-driven pipelines",
+                  1000,
+                  "idempotent consumers",
+                  1000,
+                  "LLM-powered workflows",
                   1000,
                   "zero-downtime migrations",
                   1000,
@@ -88,21 +92,23 @@ const Showcase = () => {
               maxWidth: "680px",
             }}
           >
-            I am a Software Development Engineer at Spyne AI, building
-            NestJS and Node.js microservices, event-driven pipelines on AWS,
-            and Elasticsearch read models — most recently a zero-downtime
-            migration of ~3M documents with no data loss. What pulls me in is
-            how systems behave at scale and under concurrency.
+            I'm a backend engineer at Spyne AI, working on Vini AI, an AI
+            agent that follows up with car-dealership leads over SMS and
+            calls. I designed and built its follow-up engine (NestJS, SQS
+            FIFO, EventBridge Scheduler) so no lead is texted twice or after
+            opting out. I also built a serverless pipeline that maintains
+            600K+ customer personas across 160+ dealerships, and migrated ~3M
+            documents to a new CRM service with zero downtime.
           </ParaText>
 
           <HeroFlow aria-label="Engineering focus areas">
-            <HeroFlowItem>Distributed systems</HeroFlowItem>
+            <HeroFlowItem>Event-driven systems</HeroFlowItem>
             <HeroFlowDivider />
-            <HeroFlowItem>Event-driven pipelines</HeroFlowItem>
+            <HeroFlowItem>Fault tolerance</HeroFlowItem>
+            <HeroFlowDivider />
+            <HeroFlowItem>LLM pipelines</HeroFlowItem>
             <HeroFlowDivider />
             <HeroFlowItem>Data migrations</HeroFlowItem>
-            <HeroFlowDivider />
-            <HeroFlowItem>AI workflows</HeroFlowItem>
           </HeroFlow>
 
           <FlexContainer gap="20px" responsiveFlex>
@@ -144,10 +150,11 @@ const Showcase = () => {
           variants={fadeInRightVariant}
           initial="hidden"
           whileInView="visible"
+          viewport={{ once: true }}
         >
           <ShowcaseParticleContainer>
             <ShowcaseImageCard>
-              <Image src={showcaseImage} alt="profile" />
+              <Image src={showcaseImage} alt="Priya Jha" />
             </ShowcaseImageCard>
             <Particle
               as={motion.img}
@@ -161,7 +168,8 @@ const Showcase = () => {
                 repeat: Infinity,
               }}
               src={BackgroundImage}
-              alt="particle"
+              alt=""
+              aria-hidden="true"
               top="-100px"
               left="30px"
               rotate="40deg"
@@ -178,7 +186,8 @@ const Showcase = () => {
                 repeat: Infinity,
               }}
               src={BackgroundImage}
-              alt="particle"
+              alt=""
+              aria-hidden="true"
               top="100px"
               right="-80px"
               rotate="10deg"
@@ -195,7 +204,8 @@ const Showcase = () => {
                 repeat: Infinity,
               }}
               src={BackgroundImage}
-              alt="particle"
+              alt=""
+              aria-hidden="true"
               bottom="10px"
               left="-90px"
               rotate="50deg"
